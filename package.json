@@ -1,10 +1,13 @@
 {
   "name": "skodastatic-root",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "workspaces": ["staticskoda"],
+  "engines": {
+    "node": ">=20.x"
+  },
   "scripts": {
-    "build": "npm --prefix staticskoda install --no-audit --no-fund && npm --prefix staticskoda run build",
+    "build": "npm install --no-audit --no-fund && npm --prefix staticskoda run build && rm -rf dist && cp -R staticskoda/dist ./dist",
     "preview": "npm --prefix staticskoda run preview",
     "lint": "npm --prefix staticskoda run lint"
   }
