@@ -7,7 +7,7 @@
     "node": ">=20.x"
   },
   "scripts": {
-    "build": "npm install --no-audit --no-fund && npm --prefix staticskoda run build && rm -rf dist && cp -R staticskoda/dist ./dist",
+    "build": "cd staticskoda && rm -rf node_modules package-lock.json && npm install --no-audit --no-fund && npm run build && cd .. && rm -rf dist && cp -R staticskoda/dist ./dist",
     "preview": "npm --prefix staticskoda run preview",
     "lint": "npm --prefix staticskoda run lint"
   }
